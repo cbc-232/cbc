@@ -938,8 +938,6 @@ section,
 }
 
 @media (max-width: 640px) {
-.hero{
-}
 
   .hero h1 {
     font-size: 28px;
@@ -1587,6 +1585,50 @@ section,
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
 }
+
+/*--------------------------------------------------------------
+# Blog Section with Sliding Effect
+--------------------------------------------------------------*/
+.blog {
+  background-color: var(--background-color);
+  padding: 60px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  animation: slideLeft 15s linear infinite; /* Slower sliding animation */
+}
+
+.blog .blog-item {
+  background: var(--surface-color);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  min-width: 33.333%;
+  flex: 0 0 33.333%;
+}
+
+/* Pause the animation when hovered */
+.blog-slider:hover {
+  animation-play-state: paused;
+}
+
+/* Slower Sliding Animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -2529,6 +2571,71 @@ section,
 /*--------------------------------------------------------------
 # Comment Form Section
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Newsletter Section
+--------------------------------------------------------------*/
+.newsletter {
+  background: var(--surface-color);
+  padding: 50px 0;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.newsletter-form form {
+  display: flex;
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 6px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.newsletter-form button {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.newsletter-form button:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+/* Success/Error Message */
+.message {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.success {
+  color: #059652;
+}
+.error {
+  color: #df1529;
+}
+
 .comment-form {
   padding-top: 10px;
 }
