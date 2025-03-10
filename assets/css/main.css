@@ -2568,9 +2568,58 @@ section,
   padding-left: 40px;
 }
 
-/*--------------------------------------------------------------
-# Comment Form Section
---------------------------------------------------------------*/
+/* Continuous Scrolling Effect */
+.blog-slider {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  animation: slideLeft 20s linear infinite;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Adjust to avoid a hard cut */
+  }
+}
+
+/* Pause on Hover */
+.blog-slider:hover {
+  animation-play-state: paused;
+}
+
+
+/* Blog Section - Responsive Fixes */
+@media screen and (max-width: 768px) {
+  .blog-slider {
+    flex-direction: column;
+    animation: none; /* Stops auto-slide on mobile */
+  }
+
+  .blog .blog-item {
+    min-width: 100%; /* Each blog post takes full width */
+    flex: 1 1 100%;
+    margin-bottom: 20px; /* Space between blog items */
+  }
+
+  .blog .blog-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Prevents very tall images */
+    object-fit: cover;
+  }
+
+  .blog .blog-item h3 {
+    font-size: 18px;
+  }
+
+  .blog .blog-item p {
+    font-size: 14px;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Newsletter Section
