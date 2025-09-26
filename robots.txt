@@ -3,5 +3,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cyberbizclinic.co/sitemap.xml
-
-# Note: This file is public. Use meta robots "noindex" on pages you want hidden from search results.
